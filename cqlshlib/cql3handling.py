@@ -506,9 +506,9 @@ def cf_prop_val_mapkey_completer(ctxt, cass):
         elif csc == 'DateTieredCompactionStrategy':
             opts.add('base_time_seconds')
             opts.add('max_sstable_age_days')
-            opts.add('timestamp_resolution')
             opts.add('min_threshold')
             opts.add('max_window_size_seconds')
+            opts.add('timestamp_resolution')
         return map(escape_value, opts)
     return ()
 
@@ -753,7 +753,7 @@ completer_for('userFunctionName', 'ksname')(cf_ks_name_completer)
 completer_for('userFunctionName', 'dot')(cf_ks_dot_completer)
 completer_for('userFunctionName', 'udfname')(udf_name_completer)
 completer_for('refUserFunctionName', 'udfname')(ref_udf_name_completer)
-completer_for('userAggregateName', 'ksname')(cf_ks_dot_completer)
+completer_for('userAggregateName', 'ksname')(cf_ks_name_completer)
 completer_for('userAggregateName', 'dot')(cf_ks_dot_completer)
 completer_for('userAggregateName', 'udaname')(uda_name_completer)
 
