@@ -27,5 +27,6 @@ setup(
     packages=['cqlshlib'],
     scripts = [
         'cqlsh',
+        'cqlsh.py'
     ]
 )
